@@ -76,7 +76,7 @@ font-size:13px;
 <button onclick="searchUser()">Search</button>
 
 <div class="profile" id="profile">
-<img class="avatar" src="https://placehold.co/120x120/png" alt="">
+<img class="avatar" id="avatar" src="https://placehold.co/120x120/png" alt="">
 <h2 id="display">Display Name</h2>
 <p><b>Username:</b> <span id="user"></span></p>
 <p><b>User ID:</b> Coming Soon</p>
@@ -90,9 +90,10 @@ font-size:13px;
 function searchUser(){
 const u=document.getElementById("username").value.trim();
 if(!u){alert("Enter a username");return;}
-document.getElementById("profile").style.display="block";
-document.getElementById("display").textContent=u;
-document.getElementById("user").textContent=u;
+document.getElementById("display").textContent = u;
+document.getElementById("user").textContent = u;
+document.getElementById("avatar").src = "https://robohash.org/" + u + ".png?set=set4";
+document.getElementById("profile").style.display = "block";
 }
 </script>
 </body>
